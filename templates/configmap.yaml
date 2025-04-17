@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "product-service.fullname" . }}
+  name: {{ include "item-service.fullname" . }}
   namespace: {{ .Values.namespace }}
 data:
   SPRING_DATASOURCE_URL: {{ .Values.config.datasourceUrl | quote }}
