@@ -33,7 +33,7 @@ secrets:
 ingress:
   ingressClassName: nginx
   enabled: true
-  host: product.local
+  host: item.local
   path: /
   tls:
     enabled: false
