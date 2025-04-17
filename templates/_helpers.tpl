@@ -1,7 +1,7 @@
-{{- define "product-service.name" -}}
+{{- define "item-service.name" -}}
 {{- .Chart.Name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "product-service.fullname" -}}
+{{- define "item-service.fullname" -}}
 {{- .Release.Name | default .Chart.Name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
