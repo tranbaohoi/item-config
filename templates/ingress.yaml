@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "product-service.fullname" . }}
+  name: {{ include "item-service.fullname" . }}
   namespace: {{ .Values.namespace }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -15,7 +15,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "product-service.fullname" . }}
+                name: {{ include "item-service.fullname" . }}
                 port:
                   number: {{ .Values.service.port }}
   # {{- if .Values.ingress.tls.enabled }}
