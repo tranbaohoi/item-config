@@ -33,3 +33,5 @@ spec:
               value: {{ .Values.config.hibernateDdlAuto | quote }}
             - name: SERVER_PORT
               value: {{ .Values.config.serverPort | quote }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
