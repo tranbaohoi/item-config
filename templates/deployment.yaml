@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "product-service.fullname" . }}
+  name: {{ include "item-service.fullname" . }}
   namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "product-service.name" . }}
+      app: {{ include "item-service.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "product-service.name" . }}
+        app: {{ include "item-service.name" . }}
     spec:
       containers:
-        - name: product-service
+        - name: item-service
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -27,7 +27,7 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "product-service.fullname" . }}-secret
+                  name: {{ include "item-service.fullname" . }}-secret
                   key: SPRING_DATASOURCE_PASSWORD
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: {{ .Values.config.hibernateDdlAuto | quote }}
