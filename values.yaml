@@ -5,7 +5,7 @@ replicaCount: 2
 
 image:
   repository: theeb2000/item-services
-  tag: "v12"
+  tag: "v13"
   pullPolicy: Always
 
 service:
@@ -49,7 +49,7 @@ resources:
 # production: 
 #   replicaCount: 3
 #   image:
-#     tag: "v12"
+#     tag: "v13"
 #   service:
 #     type: LoadBalancer
 #   hpa:
